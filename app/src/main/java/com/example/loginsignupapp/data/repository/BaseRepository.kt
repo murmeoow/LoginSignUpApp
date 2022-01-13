@@ -1,6 +1,6 @@
-package com.example.loginsignupapp.repository
+package com.example.loginsignupapp.data.repository
 
-import com.example.loginsignupapp.network.Resourse
+import com.example.loginsignupapp.data.network.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
@@ -9,18 +9,18 @@ abstract class BaseRepository {
 
     suspend fun <T> safeApiCall(
         apiCall: suspend () -> T
-    ):Resourse<T>{
+    ):Resource<T>{
         return withContext(Dispatchers.IO){
             try {
-                Resourse.Success(apiCall.invoke())
+                Resource.Success(apiCall.invoke())
             }
             catch (throwable: Throwable){
                 when(throwable) {
                     is HttpException -> {
-                        Resourse.Failure(false, throwable.code(), throwable.response()?.errorBody())
+                        Resource.Failure(false, throwable.code(), throwable.response()?.errorBody())
                     }
                     else -> {
-                        Resourse.Failure(true, null, null)
+                        Resource.Failure(true, null, null)
                     }
                 }
             }

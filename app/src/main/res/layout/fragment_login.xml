@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:layout_margin="8dp"
     android:orientation="vertical"
+    android:padding="8dp"
     tools:context=".ui.auth.LoginFragment">
 
 
@@ -56,4 +56,10 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/don_t_have_an_account_register_now" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

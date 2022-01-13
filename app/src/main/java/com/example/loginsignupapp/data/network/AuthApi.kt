@@ -1,6 +1,6 @@
-package com.example.loginsignupapp.network
+package com.example.loginsignupapp.data.network
 
-import com.example.loginsignupapp.responses.LoginResponse
+import com.example.loginsignupapp.data.responses.LoginResponse
 import retrofit2.http.Field
 import retrofit2.http.POST
 

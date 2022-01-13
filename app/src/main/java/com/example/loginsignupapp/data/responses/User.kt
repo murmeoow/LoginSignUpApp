@@ -1,4 +1,4 @@
-package com.example.loginsignupapp.responses
+package com.example.loginsignupapp.data.responses
 
 data class User (
     val access_token: String,
